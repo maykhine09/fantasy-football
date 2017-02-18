@@ -18,6 +18,7 @@ class Game < ActiveRecord::Base
       end
     end
     match.winning_team_id = (team1_winning_count > team2_winning_count) ? match.team1_id : ((team2_winning_count > team1_winning_count) ? match.team2_id : '')
+    Team.calculate_rate(match)
     match.save!
   end
 end

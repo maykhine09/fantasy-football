@@ -1,9 +1,9 @@
 class Api::TeamsController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
-  # def index
-  #   @teams = Team.all.order("winning_rate DESC")
-  # end
+  def index
+    @teams = Team.all.order("winning_rate DESC")
+  end
 
   def create
     team = Team.where(:name => params[:name]).first

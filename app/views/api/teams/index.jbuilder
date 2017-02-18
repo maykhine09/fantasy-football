@@ -23,5 +23,4 @@ json.array! @teams.each do |team|
   else
     json.player2 empty
   end
-  json.winning_rate team.winning_rate.round.to_s + "%"
 end

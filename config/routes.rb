@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   namespace :api do
     resources :users
     resources :teams, :only => [:index, :create, :update]
+    resources :matches, :only => [:create, :show]
   end
 
 end
